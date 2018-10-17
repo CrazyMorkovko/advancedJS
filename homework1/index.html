@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="HamburgerCalc.js"></script>
+<script>
+    window.onload = () => {
+      let hamburger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE);
+      hamburger.addTopping(Hamburger.TOPPING_MAYO);
+      hamburger.addTopping(Hamburger.TOPPING_SPICE);
+      hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+
+      console.log(hamburger.getSize());
+      console.log(hamburger.getStuffing());
+      console.log(hamburger.getToppings());
+      console.log(hamburger.calculateCalories());
+      console.log(hamburger.calculatePrice());
+    }
+</script>
+</body>
+</html>
