@@ -8,14 +8,12 @@ class Hamburger {
    * @throws {HamburgerException}  При неправильном использовании
    */
   constructor(size, stuffing) {
-    if (!(size instanceof HamburgerOptionsSize)) {
-      throw new HamburgerException('Wrong size!');
+    if (size) {
+      this.setSize(size);
     }
-    if (!(stuffing instanceof HamburgerOptionsStuffing)) {
-      throw new HamburgerException('Wrong stuffing!');
+    if (stuffing) {
+      this.setStuffing(stuffing);
     }
-    this.size = size;
-    this.stuffing = stuffing;
     this.toppings = [];
   }
 
@@ -73,6 +71,30 @@ class Hamburger {
   }
 
   /**
+   * Выбор начинки
+   * @param stuffing Начинка
+   * @throws {HamburgerException}  При неправильном использовании
+   */
+  setStuffing(stuffing) {
+    if (!(stuffing instanceof HamburgerOptionsStuffing)) {
+      throw new HamburgerException('Wrong stuffing!');
+    }
+    this.stuffing = stuffing;
+  }
+
+  /**
+   * Выбор размера
+   * @param size Размер
+   * @throws {HamburgerException}  При неправильном использовании
+   */
+  setSize(size) {
+    if (!(size instanceof HamburgerOptionsSize)) {
+      throw new HamburgerException('Wrong size!');
+    }
+    this.size = size;
+  }
+
+  /**
    * Узнать цену гамбургера
    *
    * @return {Number} Цена в долларах
@@ -81,7 +103,9 @@ class Hamburger {
     let toppingPrice = 0;
     // Подсчитываем цену всех топпингов.
     this.toppings.forEach(topping => toppingPrice += topping.getPrice());
-    return this.size.getPrice() + this.stuffing.getPrice() + toppingPrice;
+    return (this.size ? this.size.getPrice() : 0) +
+      (this.stuffing ? this.stuffing.getPrice() : 0) +
+      toppingPrice;
   }
 
   /**
@@ -93,7 +117,9 @@ class Hamburger {
     let toppingKcal = 0;
     // Подсчитываем калорийность топпингов.
     this.toppings.forEach(topping => toppingKcal += topping.getKcal());
-    return this.size.getKcal() + this.stuffing.getKcal() + toppingKcal;
+    return (this.size ? this.size.getKcal() : 0) +
+      (this.stuffing ? this.stuffing.getKcal() : 0) +
+      toppingKcal;
   }
 }
 

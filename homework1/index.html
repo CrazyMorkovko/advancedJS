@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="hamburger-form"></div>
 
 <script src="HamburgerCalc.js"></script>
+<script src="HamburgerForm.js"></script>
 <script>
     window.onload = () => {
-      let hamburger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE);
-      hamburger.addTopping(Hamburger.TOPPING_MAYO);
-      hamburger.addTopping(Hamburger.TOPPING_SPICE);
-      hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+      let hamburgerForm = new HamburgerForm([Hamburger.SIZE_SMALL, Hamburger.SIZE_LARGE],
+        [Hamburger.STUFFING_CHEESE, Hamburger.STUFFING_POTATO, Hamburger.STUFFING_SALAD],
+        [Hamburger.TOPPING_SPICE, Hamburger.TOPPING_MAYO],
+        '.hamburger-form');
 
-      console.log(hamburger.getSize());
-      console.log(hamburger.getStuffing());
-      console.log(hamburger.getToppings());
-      console.log(hamburger.calculateCalories());
-      console.log(hamburger.calculatePrice());
+      hamburgerForm.updateHTML();
     }
 </script>
 </body>
