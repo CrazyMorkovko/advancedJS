@@ -16,11 +16,15 @@
     })
       .then(data => {
         document.getElementById('container').innerHTML = replace(data.text.join('<br>'));
-
       });
 
-    function replace(data) {
-      return data.replace(/(\W)'/g, '$1\"');
+    /**
+     * Функция замены одинарных кавычек на двойные, при условии, что кавычка не является апострофом внутри слова
+     * @param text Текст, который требует замены знаков
+     * @returns {string} Текст с замененными знаками.
+     */
+    function replace(text) {
+      return text.replace(/(\W)'/g, '$1\"');
     }
   };
 </script>
