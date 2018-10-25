@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+  'use strict';
+
+  window.onload = () => {
+    fetch("texttoreplace.json").then(result => {
+      return result.json();
+    })
+      .then(data => {
+        document.getElementById('container').innerHTML = replace(data);
+      });
+
+    function replace(data) {
+      let text = '';
+      data.text.forEach(element => text += element + '<br>');
+      return text.replace(/\W'/g, '"');
+    }
+  };
+</script>
+</body>
+</html>

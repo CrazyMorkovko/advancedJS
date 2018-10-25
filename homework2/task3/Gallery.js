@@ -23,7 +23,9 @@ class Gallery {
   render() {
     let img = '';
     this.images.forEach(image => {
-      img += `<div><a href="${image.img}" target="_blank"><img width="500" src="${image.img}">${image.title}</a></div>`
+      img += `<div>
+      <a href="${image.img}" target="_blank"><img width="500" src="${image.img}" alt="${image.title}"></a>
+      </div>`;
     });
 
     return img;
