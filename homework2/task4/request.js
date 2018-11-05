@@ -19,6 +19,10 @@ window.onload = () => {
   })
 };
 
+/**
+ * Функция, которая выводит результат запроса на страницу.
+ * @param data Объект с ответом
+ */
 function getResult(data) {
   let div = document.getElementById('result');
   if (data.result === "success") {

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -18,20 +19,21 @@
 
         let menu1 = document.getElementById('mymenu');
 
-        let menu = new Menu('my', 'my', [
+        let menu = new Menu('my', 'menu', [
             new MenuItem('/', 'Home'),
-            new MenuItem('/about', 'About'),
-            new MenuItem('/blog', 'Blog'),
-            new SubMenu('me', 'me', 'Catalog', [
-                new MenuItem('/', 'Home'),
-                new SubMenu('mine', 'mine', 'Catalog', [
-                    new MenuItem('/', 'Home'),
-                    new MenuItem('/about', 'About'),
-                    new MenuItem('/blog', 'Blog'),
+            new MenuItem('/man', 'Man'),
+            new MenuItem('/women', 'Women'),
+            new SubMenu('me', 'me', 'Kids', [
+                new MenuItem('/girl', 'Girl'),
+                new SubMenu('mine', 'mine', 'Boy', [
+                    new MenuItem('/sweaters', 'Sweaters'),
+                    new MenuItem('/coats', 'Coats'),
+                    new MenuItem('/denim', 'Denim'),
                 ]),
-                new MenuItem('/about', 'About'),
-                new MenuItem('/blog', 'Blog'),
-            ])
+
+            ]),
+            new MenuItem('/featured', 'Featured'),
+            new MenuItem('/hotdeals', 'Hot Deals'),
         ]);
 
         menu1.innerHTML = menu.render();

@@ -1,0 +1,38 @@
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul, .menu {
+    list-style-type: none;
+}
+
+.menu a {
+    color: #222;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 20px 17px;
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 3px solid transparent;
+}
+
+.menu a:hover {
+    border-bottom: 3px solid #f16d7f;
+}
+
+.submenu > ul {
+    border: 1px solid gray;
+    display: none;
+    position: absolute;
+    padding-left: 0;
+    margin-left: 20px;
+}
+
+.submenu:hover > ul {
+    display: block;
+}

@@ -5,6 +5,6 @@ class SubMenu extends Menu {
   }
 
   render() {
-    return `<li><a href="#">${this.title}</a>${super.render()}</li>`;
+    return `<li class="submenu"><a href="#">${this.title}</a>${super.render()}</li>`;
   }
 }

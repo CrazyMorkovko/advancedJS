@@ -6,6 +6,9 @@ class Gallery {
     this.loadGallery()
   }
 
+  /**
+   * Загружаем json-файл со списком картинок.
+   */
   loadGallery() {
     fetch('img.json').then(result => {
       return result.json();
@@ -16,10 +19,17 @@ class Gallery {
     });
   }
 
+  /**
+   * Отображаем результат на страницу.
+   */
   updateHTML() {
     this.container.innerHTML = this.render();
   }
 
+  /**
+   * Подготовка шаблона галереи.
+   * @returns {string} Шаблон галереи
+   */
   render() {
     let img = '';
     this.images.forEach(image => {
