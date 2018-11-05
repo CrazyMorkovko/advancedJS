@@ -9,3 +9,33 @@
 .show {
     display: block;
 }
+
+.city-select-menu {
+    padding: 0;
+    margin: -5px 0 10px;
+    border: 1px solid lightgray;
+    list-style-type: none;
+    border-top: 0;
+}
+
+.city-select-menu li {
+    padding: 5px 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.city-select-menu li:last-child {
+    border-bottom: 0;
+}
+
+.city-select-field {
+    float: left;
+}
+
+.clearfix {
+    clear: both;
+}
+
+input, textarea {
+    padding: 6px 12px;
+    margin-bottom: 5px;
+}

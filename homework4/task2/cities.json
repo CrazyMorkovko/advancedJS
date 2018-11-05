@@ -7,5 +7,7 @@
   {"city": "San Francisco"},
   {"city": "Los Angeles"},
   {"city": "Las Vegas"},
+  {"city": "San Diego"},
+  {"city": "San Jose"},
   {"city": "Paris"}
 ]
