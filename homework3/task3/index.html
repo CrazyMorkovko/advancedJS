@@ -6,28 +6,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form id="form">
-    <div>
-        <input name="name" placeholder="Имя">
-        <div class="error errorName"></div>
-    </div>
-    <div>
-        <input name="phone" placeholder="Телефон">
-        <div class="error errorPhone"></div>
-    </div>
-    <div>
-        <input name="email" placeholder="E-mail" type="email">
-        <div class="error errorEmail"></div>
-    </div>
-    <div>
-        <textarea name="text" placeholder="Текст"></textarea>
-        <div class="error errorText"></div>
-    </div>
-    <div>
-        <button>Отправить форму</button>
-    </div>
-</form>
+<div id="container"></div>
 
-<script src="forms.js"></script>
+<script>
+    window.onload = () => {
+      let container = document.getElementById('container');
+      let inputName = new InputName('name', 'Имя', 'text', 'name');
+      let inputPhone = new InputPhone('phone', 'Телефон', 'text', 'phone');
+      let inputEmail = new InputEmail('email', 'E-mail', 'text', 'email');
+      let inputText = new InputText('text', 'Текст', 'text');
+
+      let form = new Form([inputName, inputPhone, inputEmail, inputText], 'form');
+      container.innerHTML = form.render();
+      form.registerListeners();
+    }
+</script>
+
+<script src="Form.js"></script>
+<script src="Input.js"></script>
+<script src="InputName.js"></script>
+<script src="InputPhone.js"></script>
+<script src="InputEmail.js"></script>
+<script src="InputText.js"></script>
 </body>
 </html>

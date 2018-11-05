@@ -1,4 +1,10 @@
+/**
+ * Класс галереи.
+ */
 class Gallery {
+  /**
+   * @param container Объект документа для отображения галереи.
+   */
   constructor(container) {
     this.container = container;
     this.images = [];
