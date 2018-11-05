@@ -8,19 +8,7 @@
 <body>
 <div id="container"></div>
 
-<script>
-    window.onload = () => {
-      let container = document.getElementById('container');
-      let inputName = new InputName('name', 'Имя', 'text', 'name');
-      let inputPhone = new InputPhone('phone', 'Телефон', 'text', 'phone');
-      let inputEmail = new InputEmail('email', 'E-mail', 'text', 'email');
-      let inputText = new InputText('text', 'Текст', 'text');
-
-      let form = new Form([inputName, inputPhone, inputEmail, inputText], 'form');
-      container.innerHTML = form.render();
-      form.registerListeners();
-    }
-</script>
+<script src="../jquery-3.3.1.min.js"></script>
 
 <script src="Form.js"></script>
 <script src="Input.js"></script>
@@ -28,5 +16,7 @@
 <script src="InputPhone.js"></script>
 <script src="InputEmail.js"></script>
 <script src="InputText.js"></script>
+<script src="InputCity.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
