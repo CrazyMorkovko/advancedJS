@@ -1,0 +1,11 @@
+.errorValue {
+    border: 1px solid #f30000;
+}
+
+.error {
+    display: none;
+}
+
+.show {
+    display: block;
+}
