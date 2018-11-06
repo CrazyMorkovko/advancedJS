@@ -20,7 +20,8 @@ class InputCity extends Input {
    */
   load() {
     $.get(`cities.json?query=${this.filter}`, data => {
-      this.cities = data.filter(city => this.filter.length > 2 && city.city.toLocaleLowerCase().includes(this.filter.toLocaleLowerCase()));
+      this.cities = data.filter(city => this.filter.length > 2 &&
+        city.city.toLocaleLowerCase().includes(this.filter.toLocaleLowerCase()));
       this.updateList();
     });
   }
